@@ -44,6 +44,8 @@ Partial Class Form1
         Me.Llogin = New System.Windows.Forms.LinkLabel()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -52,16 +54,19 @@ Partial Class Form1
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel5.SuspendLayout()
+        Me.Panel6.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.White
         Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Label1.Font = New System.Drawing.Font("Poppins Medium", 13.875!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
         Me.Label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Label1.Location = New System.Drawing.Point(411, 24)
+        Me.Label1.Location = New System.Drawing.Point(262, 14)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(266, 65)
         Me.Label1.TabIndex = 0
@@ -70,11 +75,11 @@ Partial Class Form1
         '
         'Label2
         '
-        Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Label2.BackColor = System.Drawing.SystemColors.Highlight
         Me.Label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Label2.Location = New System.Drawing.Point(422, 71)
+        Me.Label2.Location = New System.Drawing.Point(275, 58)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(40, 7)
+        Me.Label2.Size = New System.Drawing.Size(40, 5)
         Me.Label2.TabIndex = 1
         '
         'uname
@@ -103,14 +108,14 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.uname)
         Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Location = New System.Drawing.Point(227, 104)
+        Me.Panel1.Location = New System.Drawing.Point(66, 91)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(615, 95)
         Me.Panel1.TabIndex = 4
         '
         'Label3
         '
-        Me.Label3.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Label3.BackColor = System.Drawing.SystemColors.Highlight
         Me.Label3.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.Label3.Location = New System.Drawing.Point(91, 65)
         Me.Label3.Name = "Label3"
@@ -122,14 +127,14 @@ Partial Class Form1
         Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.uemail)
         Me.Panel2.Controls.Add(Me.PictureBox2)
-        Me.Panel2.Location = New System.Drawing.Point(227, 216)
+        Me.Panel2.Location = New System.Drawing.Point(66, 205)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(615, 85)
         Me.Panel2.TabIndex = 6
         '
         'Label4
         '
-        Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Label4.BackColor = System.Drawing.SystemColors.Highlight
         Me.Label4.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.Label4.Location = New System.Drawing.Point(91, 65)
         Me.Label4.Name = "Label4"
@@ -161,14 +166,14 @@ Partial Class Form1
         Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Controls.Add(Me.upass)
         Me.Panel3.Controls.Add(Me.PictureBox3)
-        Me.Panel3.Location = New System.Drawing.Point(227, 326)
+        Me.Panel3.Location = New System.Drawing.Point(66, 314)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(615, 82)
         Me.Panel3.TabIndex = 7
         '
         'Label5
         '
-        Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Label5.BackColor = System.Drawing.SystemColors.Highlight
         Me.Label5.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.Label5.Location = New System.Drawing.Point(91, 65)
         Me.Label5.Name = "Label5"
@@ -201,14 +206,14 @@ Partial Class Form1
         Me.Panel4.Controls.Add(Me.Label6)
         Me.Panel4.Controls.Add(Me.upass2)
         Me.Panel4.Controls.Add(Me.PictureBox4)
-        Me.Panel4.Location = New System.Drawing.Point(227, 435)
+        Me.Panel4.Location = New System.Drawing.Point(66, 423)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(615, 84)
         Me.Panel4.TabIndex = 6
         '
         'Label6
         '
-        Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Label6.BackColor = System.Drawing.SystemColors.Highlight
         Me.Label6.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.Label6.Location = New System.Drawing.Point(91, 65)
         Me.Label6.Name = "Label6"
@@ -238,12 +243,12 @@ Partial Class Form1
         '
         'Llogin
         '
-        Me.Llogin.ActiveLinkColor = System.Drawing.Color.MistyRose
+        Me.Llogin.ActiveLinkColor = System.Drawing.Color.Black
         Me.Llogin.AutoSize = True
         Me.Llogin.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Llogin.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Llogin.LinkColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.Llogin.Location = New System.Drawing.Point(663, 632)
+        Me.Llogin.LinkColor = System.Drawing.SystemColors.Highlight
+        Me.Llogin.Location = New System.Drawing.Point(507, 630)
         Me.Llogin.Name = "Llogin"
         Me.Llogin.Size = New System.Drawing.Size(86, 42)
         Me.Llogin.TabIndex = 9
@@ -254,7 +259,7 @@ Partial Class Form1
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Poppins Medium", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(289, 632)
+        Me.Label7.Location = New System.Drawing.Point(121, 630)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(359, 42)
         Me.Label7.TabIndex = 10
@@ -262,34 +267,53 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Button1.BackColor = System.Drawing.SystemColors.Highlight
         Me.Button1.Font = New System.Drawing.Font("Poppins Medium", 10.125!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(225, 540)
+        Me.Button1.Location = New System.Drawing.Point(66, 526)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(615, 89)
         Me.Button1.TabIndex = 11
         Me.Button1.Text = "register"
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'Panel5
+        '
+        Me.Panel5.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Panel5.BackColor = System.Drawing.Color.White
+        Me.Panel5.Controls.Add(Me.Label2)
+        Me.Panel5.Controls.Add(Me.Button1)
+        Me.Panel5.Controls.Add(Me.Label1)
+        Me.Panel5.Controls.Add(Me.Panel1)
+        Me.Panel5.Controls.Add(Me.Llogin)
+        Me.Panel5.Controls.Add(Me.Label7)
+        Me.Panel5.Controls.Add(Me.Panel2)
+        Me.Panel5.Controls.Add(Me.Panel3)
+        Me.Panel5.Controls.Add(Me.Panel4)
+        Me.Panel5.Location = New System.Drawing.Point(93, 29)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(776, 735)
+        Me.Panel5.TabIndex = 12
+        '
+        'Panel6
+        '
+        Me.Panel6.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Panel6.Controls.Add(Me.Panel5)
+        Me.Panel6.Location = New System.Drawing.Point(76, -5)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(950, 774)
+        Me.Panel6.TabIndex = 13
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.White
+        Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ClientSize = New System.Drawing.Size(1156, 771)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Llogin)
-        Me.Controls.Add(Me.Panel4)
-        Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Panel6)
         Me.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
@@ -303,8 +327,10 @@ Partial Class Form1
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
+        Me.Panel6.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -329,4 +355,6 @@ Partial Class Form1
     Friend WithEvents Llogin As LinkLabel
     Friend WithEvents Label7 As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents Panel6 As Panel
 End Class

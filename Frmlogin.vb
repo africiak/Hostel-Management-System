@@ -1,7 +1,9 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Drawing.Drawing2D
+Imports MySql.Data.MySqlClient
 Public Class Frmlogin
 
-    Private loggedInUserID As Integer
+    Public loggedInUserID As Integer
+    Public loggedInUsername As String
     Private Sub Lregister_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles Lregister.LinkClicked
         Me.Hide()
         Dim Registration As New Form1()
@@ -26,7 +28,7 @@ Public Class Frmlogin
             Try
                 conn.Open()
 
-                Dim adapter = New MySqlDataAdapter("SELECT user_id FROM users WHERE email = @uemail AND password = @upass", conn)
+                Dim adapter = New MySqlDataAdapter("SELECT user_id, username FROM users WHERE email = @uemail AND password = @upass", conn)
 
                 With adapter.SelectCommand.Parameters
                     .AddWithValue("@uemail", Email)
@@ -43,8 +45,11 @@ Public Class Frmlogin
                 If (table.Rows.Count > 0) Then
 
                     loggedInUserID = Convert.ToInt32(table.Rows(0)("user_id"))
+                    loggedInUsername = table.Rows(0)("username").ToString()
                     MsgBox("Logged in successfully", vbInformation)
 
+                    'callthe LogLoginEvent
+                    LogLoginEvent(loggedInUserID, loggedInUsername)
 
                     If Email.ToLower().Contains("admin@gmail.com") Then
 
@@ -55,8 +60,10 @@ Public Class Frmlogin
                         Dim profileExists As Boolean = CheckProfile(loggedInUserID)
 
                         If profileExists Then
+                            Dim frmUdash As New FrmUdash(loggedInUserID, loggedInUsername)
+                            frmUdash.Show()
                             Me.Hide()
-                            FrmUdash.Show()
+
                         Else
 
                             Dim profileForm As New profile(Me)
@@ -81,6 +88,37 @@ Public Class Frmlogin
         End If
     End Sub
 
+    Private Sub LogLoginEvent(userID As Integer, username As String)
+        ' Create a timestamp for the event
+        Dim timestamp As DateTime = DateTime.Now
+        Dim conn = New MySqlConnection(My.Settings.connString)
+        Try
+            ' Insert the login event into the database
+            conn.Open()
+            Using conn
+                Dim cmd = New MySqlCommand("INSERT INTO audittrail (timestamp, userid, eventType, Description) VALUES (@timestamp, @userid, @eventType, @Description)", conn)
+
+                With cmd.Parameters
+                    .AddWithValue("@timestamp", timestamp)
+                    .AddWithValue("@userid", userID)
+                    .AddWithValue("@eventType", "User Login")
+                    .AddWithValue("@Description", "User '" & username & "' logged in successfully.")
+
+                End With
+
+                Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+                If rowsAffected > 0 Then
+                    MessageBox.Show("Audit trail logged.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    MessageBox.Show("Failed to log audit trail.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            End Using
+
+        Catch ex As Exception
+            MsgBox("An error occurred while logging the login event: " & ex.Message, MsgBoxStyle.Exclamation)
+            Console.WriteLine("Error logging login event: " & ex.ToString())
+        End Try
+    End Sub
     Public Function GetLoggedInUserID() As Integer
         Return loggedInUserID
     End Function
@@ -110,10 +148,20 @@ Public Class Frmlogin
     End Function
 
     Private Sub Frmlogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim button As New Button()
-        button.Anchor = AnchorStyles.Left Or AnchorStyles.Right
-        button.Text = "Click Me"
-        button.Location = New Point(Me.ClientSize.Width - button.Width - 150, Me.ClientSize.Height - button.Height - 100)
-        Me.Controls.Add(button)
+
+        Dim path As New GraphicsPath()
+        Dim radius As Integer = 20 ' Adjust the radius to change the roundness of the corners
+
+        ' Add arcs to the path to create rounded corners
+        path.AddArc(New Rectangle(0, 0, radius * 2, radius * 2), 180, 90) ' Top-left corner
+        path.AddArc(New Rectangle(Panel1.Width - 2 * radius, 0, radius * 2, radius * 2), 270, 90) ' Top-right corner
+        path.AddArc(New Rectangle(Panel1.Width - 2 * radius, Panel1.Height - 2 * radius, radius * 2, radius * 2), 0, 90) ' Bottom-right corner
+        path.AddArc(New Rectangle(0, Panel1.Height - 2 * radius, radius * 2, radius * 2), 90, 90) ' Bottom-left corner
+        path.CloseFigure()
+
+        ' Set the panel's Region property to the created path
+        Panel1.Region = New Region(path)
     End Sub
+
+
 End Class

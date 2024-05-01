@@ -99,4 +99,16 @@ Public Class Rooms
 
         End Try
     End Sub
+
+    Private Sub btndash_Click(sender As Object, e As EventArgs) Handles btndash.Click
+        Me.Hide()
+        ADash.Show()
+
+    End Sub
+
+    Private Sub btnlogout_Click(sender As Object, e As EventArgs) Handles btnlogout.Click
+        Me.Hide()
+        splash.Show()
+
+    End Sub
 End Class

@@ -63,26 +63,25 @@ Partial Class splash
         '
         'Panel1
         '
-        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.Firebrick
+        Me.Panel1.BackColor = System.Drawing.SystemColors.Highlight
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1281, 95)
+        Me.Panel1.Size = New System.Drawing.Size(1250, 95)
         Me.Panel1.TabIndex = 0
         '
         'Button2
         '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Button2.BackColor = System.Drawing.Color.White
         Me.Button2.Dock = System.Windows.Forms.DockStyle.Right
         Me.Button2.Font = New System.Drawing.Font("Poppins", 10.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(919, 0)
+        Me.Button2.ForeColor = System.Drawing.Color.Black
+        Me.Button2.Location = New System.Drawing.Point(888, 0)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(181, 95)
         Me.Button2.TabIndex = 14
@@ -91,11 +90,11 @@ Partial Class splash
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Button1.BackColor = System.Drawing.Color.White
         Me.Button1.Dock = System.Windows.Forms.DockStyle.Right
         Me.Button1.Font = New System.Drawing.Font("Poppins", 10.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(1100, 0)
+        Me.Button1.ForeColor = System.Drawing.Color.Black
+        Me.Button1.Location = New System.Drawing.Point(1069, 0)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(181, 95)
         Me.Button1.TabIndex = 13
@@ -114,7 +113,7 @@ Partial Class splash
         '
         'Label2
         '
-        Me.Label2.BackColor = System.Drawing.Color.OrangeRed
+        Me.Label2.BackColor = System.Drawing.Color.White
         Me.Label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.Label2.Location = New System.Drawing.Point(107, 53)
         Me.Label2.Name = "Label2"
@@ -125,25 +124,25 @@ Partial Class splash
         '
         Me.Label1.AutoSize = True
         Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Label1.Font = New System.Drawing.Font("Poppins Medium", 13.875!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.Label1.Location = New System.Drawing.Point(96, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(233, 65)
+        Me.Label1.Size = New System.Drawing.Size(194, 56)
         Me.Label1.TabIndex = 8
         Me.Label1.Text = "DormDash"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.MistyRose
+        Me.Panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.Label8)
         Me.Panel2.Controls.Add(Me.Label5)
-        Me.Panel2.Location = New System.Drawing.Point(12, 65)
+        Me.Panel2.Location = New System.Drawing.Point(12, 3)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(336, 275)
+        Me.Panel2.Size = New System.Drawing.Size(360, 349)
         Me.Panel2.TabIndex = 1
         '
         'Label8
@@ -170,13 +169,13 @@ Partial Class splash
         '
         Me.Panel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel3.BackColor = System.Drawing.Color.LightSalmon
+        Me.Panel3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel3.Controls.Add(Me.Label9)
         Me.Panel3.Controls.Add(Me.Label6)
-        Me.Panel3.Location = New System.Drawing.Point(401, 65)
+        Me.Panel3.Location = New System.Drawing.Point(401, 3)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(364, 275)
+        Me.Panel3.Size = New System.Drawing.Size(364, 349)
         Me.Panel3.TabIndex = 2
         '
         'Label9
@@ -202,13 +201,13 @@ Partial Class splash
         'Panel4
         '
         Me.Panel4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel4.BackColor = System.Drawing.Color.Sienna
+        Me.Panel4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel4.Controls.Add(Me.Label10)
         Me.Panel4.Controls.Add(Me.Label7)
-        Me.Panel4.Location = New System.Drawing.Point(798, 65)
+        Me.Panel4.Location = New System.Drawing.Point(798, 3)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(403, 275)
+        Me.Panel4.Size = New System.Drawing.Size(403, 349)
         Me.Panel4.TabIndex = 2
         '
         'Label10
@@ -234,12 +233,14 @@ Partial Class splash
         '
         'Panel5
         '
+        Me.Panel5.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Panel5.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.Panel5.Controls.Add(Me.PictureBox2)
         Me.Panel5.Controls.Add(Me.Label13)
         Me.Panel5.Controls.Add(Me.Label11)
-        Me.Panel5.Location = New System.Drawing.Point(44, 611)
+        Me.Panel5.Location = New System.Drawing.Point(16, 609)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(506, 275)
+        Me.Panel5.Size = New System.Drawing.Size(536, 275)
         Me.Panel5.TabIndex = 3
         '
         'PictureBox2
@@ -276,12 +277,14 @@ Partial Class splash
         '
         'Panel6
         '
+        Me.Panel6.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Panel6.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.Panel6.Controls.Add(Me.PictureBox3)
         Me.Panel6.Controls.Add(Me.Label14)
         Me.Panel6.Controls.Add(Me.Label12)
-        Me.Panel6.Location = New System.Drawing.Point(652, 623)
+        Me.Panel6.Location = New System.Drawing.Point(618, 609)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(579, 275)
+        Me.Panel6.Size = New System.Drawing.Size(620, 275)
         Me.Panel6.TabIndex = 4
         '
         'PictureBox3
@@ -316,21 +319,23 @@ Partial Class splash
         '
         'Label3
         '
-        Me.Label3.BackColor = System.Drawing.Color.OrangeRed
+        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label3.BackColor = System.Drawing.SystemColors.Highlight
         Me.Label3.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Label3.Location = New System.Drawing.Point(65, 163)
+        Me.Label3.Location = New System.Drawing.Point(27, 165)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(40, 7)
+        Me.Label3.Size = New System.Drawing.Size(40, 5)
         Me.Label3.TabIndex = 13
         '
         'Label4
         '
+        Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label4.AutoSize = True
         Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Label4.Font = New System.Drawing.Font("Poppins", 13.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
         Me.Label4.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Label4.Location = New System.Drawing.Point(65, 119)
+        Me.Label4.Location = New System.Drawing.Point(14, 119)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(350, 65)
         Me.Label4.TabIndex = 12
@@ -339,12 +344,11 @@ Partial Class splash
         '
         'Panel7
         '
-        Me.Panel7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel7.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Panel7.Controls.Add(Me.Panel4)
         Me.Panel7.Controls.Add(Me.Panel3)
         Me.Panel7.Controls.Add(Me.Panel2)
-        Me.Panel7.Location = New System.Drawing.Point(43, 204)
+        Me.Panel7.Location = New System.Drawing.Point(16, 201)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(1222, 355)
         Me.Panel7.TabIndex = 14
@@ -353,7 +357,8 @@ Partial Class splash
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Snow
+        Me.AutoScroll = True
+        Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ClientSize = New System.Drawing.Size(1284, 803)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label4)
@@ -361,9 +366,9 @@ Partial Class splash
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel7)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MinimizeBox = False
         Me.Name = "splash"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "splash"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

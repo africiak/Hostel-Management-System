@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class ADash
-    Private Sub btnlogout_Click(sender As Object, e As EventArgs) Handles btnlogout.Click
+    Private Sub btnlogout_Click(sender As Object, e As EventArgs)
         Me.Close()
         Frmlogin.Show()
         Frmlogin.txtemail.Clear()
@@ -11,7 +11,10 @@ Public Class ADash
     Private Sub ADash_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim totalUsers As Integer = GetTotalUsersCount()
         lbltotalusers.Text = "Total Residents : " & totalUsers.ToString()
+
+
     End Sub
+
     Private Function GetTotalUsersCount() As Integer
         Dim totalUsers As Integer = 0
         Dim conn As New MySqlConnection(My.Settings.connString)
@@ -30,4 +33,10 @@ Public Class ADash
 
     End Sub
 
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Me.Hide()
+        frmaudit.Show()
+
+
+    End Sub
 End Class

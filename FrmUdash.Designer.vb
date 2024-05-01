@@ -23,175 +23,233 @@ Partial Class FrmUdash
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmUdash))
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.billing = New System.Windows.Forms.Button()
+        Me.reservation = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.btnlogout = New System.Windows.Forms.Button()
+        Me.complaints = New System.Windows.Forms.Button()
+        Me.visitors = New System.Windows.Forms.Button()
+        Me.centerpanel = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnlogout = New System.Windows.Forms.Button()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.lbltotalusers = New System.Windows.Forms.Label()
-        Me.Panel1.SuspendLayout()
+        Me.lblUsername = New System.Windows.Forms.TextBox()
+        Me.txtAllocatedroom = New System.Windows.Forms.TextBox()
+        Me.centerpanel.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Panel1
+        'billing
         '
-        Me.Panel1.Controls.Add(Me.Button4)
-        Me.Panel1.Controls.Add(Me.Button3)
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Controls.Add(Me.Button5)
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.btnlogout)
-        Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(298, 771)
-        Me.Panel1.TabIndex = 0
+        Me.billing.BackColor = System.Drawing.Color.White
+        Me.billing.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.billing.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.billing.Location = New System.Drawing.Point(3, 210)
+        Me.billing.Name = "billing"
+        Me.billing.Size = New System.Drawing.Size(226, 72)
+        Me.billing.TabIndex = 3
+        Me.billing.Text = "Billing"
+        Me.billing.UseVisualStyleBackColor = False
         '
-        'Button4
+        'reservation
         '
-        Me.Button4.Location = New System.Drawing.Point(-4, 303)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(302, 90)
-        Me.Button4.TabIndex = 3
-        Me.Button4.Text = "Billing"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(-4, 500)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(302, 90)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "Reservation"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.reservation.BackColor = System.Drawing.Color.White
+        Me.reservation.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.reservation.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.reservation.Location = New System.Drawing.Point(3, 130)
+        Me.reservation.Name = "reservation"
+        Me.reservation.Size = New System.Drawing.Size(226, 72)
+        Me.reservation.TabIndex = 2
+        Me.reservation.Text = "Reservations"
+        Me.reservation.UseVisualStyleBackColor = False
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(-7, 111)
+        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.Button1.Location = New System.Drawing.Point(1, 50)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(302, 90)
+        Me.Button1.Size = New System.Drawing.Size(228, 72)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Profile"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
-        'Button5
+        'complaints
         '
-        Me.Button5.Location = New System.Drawing.Point(0, 404)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(295, 90)
-        Me.Button5.TabIndex = 6
-        Me.Button5.Text = "Complaints"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.complaints.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.complaints.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.complaints.Location = New System.Drawing.Point(1, 370)
+        Me.complaints.Name = "complaints"
+        Me.complaints.Size = New System.Drawing.Size(228, 74)
+        Me.complaints.TabIndex = 6
+        Me.complaints.Text = "Complaints"
+        Me.complaints.UseVisualStyleBackColor = True
         '
-        'Button2
+        'visitors
         '
-        Me.Button2.Location = New System.Drawing.Point(-7, 207)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(302, 90)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "visitor"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.visitors.BackColor = System.Drawing.Color.White
+        Me.visitors.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.visitors.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.visitors.Location = New System.Drawing.Point(1, 290)
+        Me.visitors.Name = "visitors"
+        Me.visitors.Size = New System.Drawing.Size(228, 72)
+        Me.visitors.TabIndex = 1
+        Me.visitors.Text = "Visitors"
+        Me.visitors.UseVisualStyleBackColor = False
         '
-        'btnlogout
+        'centerpanel
         '
-        Me.btnlogout.Location = New System.Drawing.Point(48, 661)
-        Me.btnlogout.Name = "btnlogout"
-        Me.btnlogout.Size = New System.Drawing.Size(164, 77)
-        Me.btnlogout.TabIndex = 7
-        Me.btnlogout.Text = "Logout"
-        Me.btnlogout.UseVisualStyleBackColor = True
+        Me.centerpanel.AutoSize = True
+        Me.centerpanel.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.centerpanel.Controls.Add(Me.reservation)
+        Me.centerpanel.Controls.Add(Me.complaints)
+        Me.centerpanel.Controls.Add(Me.billing)
+        Me.centerpanel.Controls.Add(Me.visitors)
+        Me.centerpanel.Controls.Add(Me.Button1)
+        Me.centerpanel.Dock = System.Windows.Forms.DockStyle.Left
+        Me.centerpanel.Location = New System.Drawing.Point(0, 95)
+        Me.centerpanel.Name = "centerpanel"
+        Me.centerpanel.Size = New System.Drawing.Size(232, 676)
+        Me.centerpanel.TabIndex = 18
         '
         'PictureBox1
         '
+        Me.PictureBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(10, 28)
+        Me.PictureBox1.Location = New System.Drawing.Point(235, 95)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(41, 32)
+        Me.PictureBox1.Size = New System.Drawing.Size(918, 676)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 15
+        Me.PictureBox1.TabIndex = 19
         Me.PictureBox1.TabStop = False
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.Highlight
+        Me.Panel1.Controls.Add(Me.btnlogout)
+        Me.Panel1.Controls.Add(Me.PictureBox2)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1156, 95)
+        Me.Panel1.TabIndex = 20
+        '
+        'btnlogout
+        '
+        Me.btnlogout.BackColor = System.Drawing.Color.White
+        Me.btnlogout.Dock = System.Windows.Forms.DockStyle.Right
+        Me.btnlogout.Font = New System.Drawing.Font("Poppins", 10.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnlogout.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.btnlogout.Location = New System.Drawing.Point(948, 0)
+        Me.btnlogout.Name = "btnlogout"
+        Me.btnlogout.Size = New System.Drawing.Size(208, 95)
+        Me.btnlogout.TabIndex = 13
+        Me.btnlogout.Text = "Logout"
+        Me.btnlogout.UseVisualStyleBackColor = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(44, 26)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(46, 32)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 12
+        Me.PictureBox2.TabStop = False
         '
         'Label2
         '
-        Me.Label2.BackColor = System.Drawing.Color.OrangeRed
+        Me.Label2.BackColor = System.Drawing.Color.White
         Me.Label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Label2.Location = New System.Drawing.Point(73, 53)
+        Me.Label2.Location = New System.Drawing.Point(107, 53)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(35, 7)
-        Me.Label2.TabIndex = 14
+        Me.Label2.Size = New System.Drawing.Size(40, 7)
+        Me.Label2.TabIndex = 9
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Label1.Font = New System.Drawing.Font("Poppins Medium", 13.875!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Label1.Location = New System.Drawing.Point(62, 9)
+        Me.Label1.Location = New System.Drawing.Point(96, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(233, 65)
-        Me.Label1.TabIndex = 13
+        Me.Label1.Size = New System.Drawing.Size(194, 56)
+        Me.Label1.TabIndex = 8
         Me.Label1.Text = "DormDash"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'DataGridView2
+        'lblUsername
         '
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(735, 126)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.RowHeadersWidth = 82
-        Me.DataGridView2.Size = New System.Drawing.Size(240, 150)
-        Me.DataGridView2.TabIndex = 7
+        Me.lblUsername.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblUsername.BackColor = System.Drawing.Color.ForestGreen
+        Me.lblUsername.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.lblUsername.Font = New System.Drawing.Font("Poppins", 10.875!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUsername.ForeColor = System.Drawing.Color.White
+        Me.lblUsername.Location = New System.Drawing.Point(238, 101)
+        Me.lblUsername.Name = "lblUsername"
+        Me.lblUsername.Size = New System.Drawing.Size(915, 44)
+        Me.lblUsername.TabIndex = 21
+        Me.lblUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'lbltotalusers
+        'txtAllocatedroom
         '
-        Me.lbltotalusers.AutoSize = True
-        Me.lbltotalusers.Location = New System.Drawing.Point(405, 162)
-        Me.lbltotalusers.Name = "lbltotalusers"
-        Me.lbltotalusers.Size = New System.Drawing.Size(77, 25)
-        Me.lbltotalusers.TabIndex = 8
-        Me.lbltotalusers.Text = "Label3"
+        Me.txtAllocatedroom.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtAllocatedroom.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtAllocatedroom.Font = New System.Drawing.Font("Poppins", 10.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAllocatedroom.ForeColor = System.Drawing.Color.ForestGreen
+        Me.txtAllocatedroom.Location = New System.Drawing.Point(690, 225)
+        Me.txtAllocatedroom.Name = "txtAllocatedroom"
+        Me.txtAllocatedroom.Size = New System.Drawing.Size(444, 41)
+        Me.txtAllocatedroom.TabIndex = 22
         '
         'FrmUdash
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1156, 771)
-        Me.Controls.Add(Me.lbltotalusers)
-        Me.Controls.Add(Me.DataGridView2)
+        Me.Controls.Add(Me.txtAllocatedroom)
+        Me.Controls.Add(Me.lblUsername)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.centerpanel)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "FrmUdash"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmUdash"
+        Me.centerpanel.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents complaints As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents visitors As Button
+    Friend WithEvents reservation As Button
+    Friend WithEvents billing As Button
+    Friend WithEvents centerpanel As Panel
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents btnlogout As Button
+    Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents btnlogout As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents DataGridView2 As DataGridView
-    Friend WithEvents lbltotalusers As Label
+    Friend WithEvents lblUsername As TextBox
+    Friend WithEvents txtAllocatedroom As TextBox
 End Class

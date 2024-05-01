@@ -46,7 +46,7 @@ Partial Class Frmlogin
         '
         'Label2
         '
-        Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Label2.BackColor = System.Drawing.SystemColors.Highlight
         Me.Label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.Label2.Location = New System.Drawing.Point(352, 75)
         Me.Label2.Name = "Label2"
@@ -69,7 +69,6 @@ Partial Class Frmlogin
         '
         'Panel3
         '
-        Me.Panel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Controls.Add(Me.txtpass)
         Me.Panel3.Controls.Add(Me.PictureBox3)
@@ -80,8 +79,7 @@ Partial Class Frmlogin
         '
         'Label5
         '
-        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Label5.BackColor = System.Drawing.SystemColors.Highlight
         Me.Label5.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.Label5.Location = New System.Drawing.Point(91, 65)
         Me.Label5.Name = "Label5"
@@ -111,9 +109,6 @@ Partial Class Frmlogin
         '
         'Panel2
         '
-        Me.Panel2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.txtemail)
         Me.Panel2.Controls.Add(Me.PictureBox2)
@@ -124,8 +119,7 @@ Partial Class Frmlogin
         '
         'Label4
         '
-        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label4.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Label4.BackColor = System.Drawing.SystemColors.Highlight
         Me.Label4.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.Label4.Location = New System.Drawing.Point(91, 65)
         Me.Label4.Name = "Label4"
@@ -157,8 +151,7 @@ Partial Class Frmlogin
         '
         'btnlogin
         '
-        Me.btnlogin.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnlogin.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.btnlogin.BackColor = System.Drawing.SystemColors.Highlight
         Me.btnlogin.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnlogin.Font = New System.Drawing.Font("Poppins Medium", 10.125!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnlogin.ForeColor = System.Drawing.Color.White
@@ -171,11 +164,11 @@ Partial Class Frmlogin
         '
         'Lregister
         '
-        Me.Lregister.ActiveLinkColor = System.Drawing.Color.MistyRose
+        Me.Lregister.ActiveLinkColor = System.Drawing.SystemColors.MenuText
         Me.Lregister.AutoSize = True
         Me.Lregister.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Lregister.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lregister.LinkColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Lregister.LinkColor = System.Drawing.SystemColors.Highlight
         Me.Lregister.Location = New System.Drawing.Point(520, 479)
         Me.Lregister.Name = "Lregister"
         Me.Lregister.Size = New System.Drawing.Size(112, 42)
@@ -195,11 +188,9 @@ Partial Class Frmlogin
         '
         'Panel1
         '
-        Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Panel1.AutoSize = True
         Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Lregister)
         Me.Panel1.Controls.Add(Me.Label1)
@@ -208,6 +199,7 @@ Partial Class Frmlogin
         Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Controls.Add(Me.btnlogin)
         Me.Panel1.Location = New System.Drawing.Point(95, 96)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 40, 3, 3)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(836, 548)
         Me.Panel1.TabIndex = 13
@@ -219,8 +211,8 @@ Partial Class Frmlogin
         Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ClientSize = New System.Drawing.Size(1156, 771)
         Me.Controls.Add(Me.Panel1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Frmlogin"
+        Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Frmlogin"
         Me.Panel3.ResumeLayout(False)

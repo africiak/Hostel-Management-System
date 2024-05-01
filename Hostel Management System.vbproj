@@ -99,6 +99,12 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmaudit.Designer.vb">
+      <DependentUpon>frmaudit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmaudit.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Frmlogin.Designer.vb">
       <DependentUpon>Frmlogin.vb</DependentUpon>
     </Compile>
@@ -139,6 +145,18 @@
     <Compile Include="profile.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="profileUpdate.Designer.vb">
+      <DependentUpon>profileUpdate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="profileUpdate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservations.Designer.vb">
+      <DependentUpon>Reservations.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reservations.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Rooms.Designer.vb">
       <DependentUpon>Rooms.vb</DependentUpon>
     </Compile>
@@ -151,10 +169,19 @@
     <Compile Include="splash.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="visitors.Designer.vb">
+      <DependentUpon>visitors.vb</DependentUpon>
+    </Compile>
+    <Compile Include="visitors.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ADash.resx">
       <DependentUpon>ADash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmaudit.resx">
+      <DependentUpon>frmaudit.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frmlogin.resx">
       <DependentUpon>Frmlogin.vb</DependentUpon>
@@ -177,11 +204,20 @@
     <EmbeddedResource Include="profile.resx">
       <DependentUpon>profile.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="profileUpdate.resx">
+      <DependentUpon>profileUpdate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservations.resx">
+      <DependentUpon>Reservations.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Rooms.resx">
       <DependentUpon>Rooms.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="splash.resx">
       <DependentUpon>splash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="visitors.resx">
+      <DependentUpon>visitors.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

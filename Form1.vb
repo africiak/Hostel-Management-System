@@ -1,4 +1,5 @@
-﻿Imports Hostel_Management_System.My
+﻿Imports System.Drawing.Drawing2D
+Imports Hostel_Management_System.My
 Imports MySql.Data.MySqlClient
 
 Public Class Form1
@@ -90,6 +91,21 @@ Public Class Form1
 
         Return count > 0
     End Function
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim path As New GraphicsPath()
+        Dim radius As Integer = 20 ' Adjust the radius to change the roundness of the corners
+
+        ' Add arcs to the path to create rounded corners
+        path.AddArc(New Rectangle(0, 0, radius * 2, radius * 2), 180, 90) ' Top-left corner
+        path.AddArc(New Rectangle(Panel5.Width - 2 * radius, 0, radius * 2, radius * 2), 270, 90) ' Top-right corner
+        path.AddArc(New Rectangle(Panel5.Width - 2 * radius, Panel5.Height - 2 * radius, radius * 2, radius * 2), 0, 90) ' Bottom-right corner
+        path.AddArc(New Rectangle(0, Panel5.Height - 2 * radius, radius * 2, radius * 2), 90, 90) ' Bottom-left corner
+        path.CloseFigure()
+
+        ' Set the panel's Region property to the created path
+        Panel5.Region = New Region(path)
+    End Sub
 
 
 End Class
