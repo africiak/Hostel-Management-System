@@ -1,4 +1,7 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Data.SqlClient
+Imports Bunifu.UI.WinForms.BunifuSnackbar
+Imports System.Threading
+Imports MySql.Data.MySqlClient
 
 Public Class FrmUdash
 
@@ -33,8 +36,6 @@ Public Class FrmUdash
             Dim allocatedRoomInfo As String = GetAllocatedRoomInfo(loggedInUserID)
             lblUsername.Text = welcome & allocatedRoomInfo
         End If
-
-
     End Sub
 
     Private Function GetAllocatedRoomInfo(userID As Integer) As String
@@ -101,17 +102,64 @@ Public Class FrmUdash
         reservationForm.Show()
     End Sub
 
-    Private Sub lblUsername_TextChanged(sender As Object, e As EventArgs) Handles lblUsername.TextChanged
-
-    End Sub
-
     Private Sub btnlogout_Click(sender As Object, e As EventArgs) Handles btnlogout.Click
         Me.Hide()
         splash.Show()
 
     End Sub
 
-    Private Sub billing_Click(sender As Object, e As EventArgs) Handles billing.Click
 
+    Private Sub complaints_Click(sender As Object, e As EventArgs) Handles complaints.Click
+
+        Dim complaintsForm As New complaints(loggedInUserID)
+        complaintsForm.Show()
+        Me.Hide()
+    End Sub
+
+    Private Function GetPriceReservations(userID As Integer) As Decimal
+        Dim price As Decimal = 0
+
+
+        Dim conn = New MySqlConnection(My.Settings.connString)
+        Try
+            conn.Open()
+            Using conn
+
+
+                Dim cmd = New MySqlCommand("SELECT price FROM reservations WHERE userid = @UserID", conn)
+
+                With cmd.Parameters
+                    .AddWithValue("@UserID", userID)
+
+                End With
+
+                Dim result As Object = cmd.ExecuteScalar()
+
+                ' Check if a valid result is returned
+                If result IsNot Nothing AndAlso Not DBNull.Value.Equals(result) Then
+                    ' Parse the result to Decimal and assign it to the price variable
+                    price = Convert.ToDecimal(result)
+                End If
+            End Using
+        Catch ex As Exception
+            ' Handle any exceptions
+            MessageBox.Show("An error occurred while retrieving price from reservations table: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            conn.Close()
+
+        End Try
+        Return price
+    End Function
+
+
+    Private Sub billing_Click(sender As Object, e As EventArgs) Handles billing.Click
+        Dim price As Decimal = GetPriceReservations(loggedInUserID)
+        Dim billingForm As New BillingForm(price, loggedInUserID, loggedInUsername)
+        billingForm.Show()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim helpForm As New helpForm()
+        helpForm.Show()
     End Sub
 End Class

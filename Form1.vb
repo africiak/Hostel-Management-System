@@ -1,6 +1,8 @@
 ﻿Imports System.Drawing.Drawing2D
 Imports Hostel_Management_System.My
 Imports MySql.Data.MySqlClient
+Imports System.Security.Cryptography
+Imports System.Text
 
 Public Class Form1
 
@@ -16,8 +18,8 @@ Public Class Form1
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim Username As String = uname.Text.Trim()
         Dim Email As String = uemail.Text.Trim()
-        Dim Password As String = upass.Text.Trim()
-        Dim ConfirmPassword As String = upass2.Text.Trim()
+        Dim Password As String = Encryption(upass.Text.Trim())
+        Dim ConfirmPassword As String = Encryption(upass2.Text.Trim())
 
         If Username = "" Or Email = "" Or Password = "" Or ConfirmPassword = "" Then
             MsgBox("All fields required!", vbExclamation)
@@ -90,6 +92,18 @@ Public Class Form1
         End Try
 
         Return count > 0
+    End Function
+    Private Function Encryption(password As String) As String
+        Using sha256 As SHA256 = SHA256.Create()
+            Dim hashedBytes As Byte() = sha256.ComputeHash(Encoding.UTF8.GetBytes(password))
+            Dim builder As New StringBuilder()
+
+            For i As Integer = 0 To hashedBytes.Length - 1
+                builder.Append(hashedBytes(i).ToString("x2"))
+            Next
+
+            Return builder.ToString()
+        End Using
     End Function
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load

@@ -1,4 +1,6 @@
 ﻿Imports System.Drawing.Drawing2D
+Imports System.Security.Cryptography
+Imports System.Text
 Imports MySql.Data.MySqlClient
 Public Class Frmlogin
 
@@ -17,7 +19,7 @@ Public Class Frmlogin
 
     Private Sub btnlogin_Click(sender As Object, e As EventArgs) Handles btnlogin.Click
         Dim Email As String = txtemail.Text.Trim()
-        Dim Password As String = txtpass.Text.Trim()
+        Dim Password As String = HashPassword(txtpass.Text.Trim())
 
         If Email = "" Or Password = "" Then
             MsgBox("Enter your credentials!", vbExclamation)
@@ -27,66 +29,94 @@ Public Class Frmlogin
             Dim conn = New MySqlConnection(My.Settings.connString)
             Try
                 conn.Open()
+                Try
+                    Dim adapter = New MySqlDataAdapter("SELECT user_id, username, password FROM users WHERE email = @uemail AND password = @upass", conn)
 
-                Dim adapter = New MySqlDataAdapter("SELECT user_id, username FROM users WHERE email = @uemail AND password = @upass", conn)
+                    With adapter.SelectCommand.Parameters
+                        .AddWithValue("@uemail", Email)
+                        .AddWithValue("@upass", Password)
 
-                With adapter.SelectCommand.Parameters
-                    .AddWithValue("@uemail", Email)
-                    .AddWithValue("@upass", Password)
+                    End With
 
-                End With
+                    Dim table = New DataTable()
 
-                Dim table = New DataTable()
+                    adapter.Fill(table)
 
-                adapter.Fill(table)
 
-                'check for record match'
+                    'check for record match'
 
-                If (table.Rows.Count > 0) Then
+                    If (table.Rows.Count > 0) Then
+                    Dim hashedPassword As String = table.Rows(0)("password").ToString()
 
-                    loggedInUserID = Convert.ToInt32(table.Rows(0)("user_id"))
-                    loggedInUsername = table.Rows(0)("username").ToString()
-                    MsgBox("Logged in successfully", vbInformation)
+                    Console.WriteLine("Database Hashed Password: " & hashedPassword)
+                    Console.WriteLine("Provided Hashed Password: " & Password)
 
-                    'callthe LogLoginEvent
-                    LogLoginEvent(loggedInUserID, loggedInUsername)
+                    If hashedPassword = Password Then
+                        loggedInUserID = Convert.ToInt32(table.Rows(0)("user_id"))
+                        loggedInUsername = table.Rows(0)("username").ToString()
+                        MsgBox("Logged in successfully", vbInformation)
 
-                    If Email.ToLower().Contains("admin@gmail.com") Then
+                        'callthe LogLoginEvent
+                        LogLoginEvent(loggedInUserID, loggedInUsername)
 
-                        Me.Hide()
-                        ADash.Show()
-                    Else
-                        'check profile
-                        Dim profileExists As Boolean = CheckProfile(loggedInUserID)
+                        If Email.ToLower().Contains("admin@gmail.com") Then
 
-                        If profileExists Then
-                            Dim frmUdash As New FrmUdash(loggedInUserID, loggedInUsername)
-                            frmUdash.Show()
                             Me.Hide()
-
+                            ADash.Show()
                         Else
+                            'check profile
+                            Dim profileExists As Boolean = CheckProfile(loggedInUserID)
 
-                            Dim profileForm As New profile(Me)
-                            profileForm.Show()
-                            Me.Hide()
+                            If profileExists Then
+                                Dim frmUdash As New FrmUdash(loggedInUserID, loggedInUsername)
+                                frmUdash.Show()
+                                Me.Hide()
+
+                            Else
+
+                                Dim profileForm As New profile(Me)
+                                profileForm.Show()
+                                Me.Hide()
+                            End If
                         End If
+
+                    Else
+                        MsgBox("Incorrect password. Plese try again", vbCritical)
                     End If
                 Else
-                    MsgBox("Invalid email or password", vbCritical)
-
+                    MsgBox("Email not found. Check email address and try again.", vbCritical)
                 End If
+            Catch ex As Exception
+                ' Handle the error...
+                MsgBox("An error occurred while creating the data adapter: " & ex.Message, vbCritical)
+                Console.WriteLine("Error creating data adapter: " & ex.ToString())
+            End Try
 
             Catch ex As Exception
-                MsgBox("An error occured while logging in.Please try again later.", vbCritical)
-                Console.WriteLine(ex.ToString())
+                    MsgBox("An error occured while logging in.Please try again later.", vbCritical)
+                    Console.WriteLine(ex.ToString())
 
-            Finally
-                conn.Dispose()
+                Finally
+                    conn.Dispose()
                 conn.Close()
             End Try
 
         End If
     End Sub
+
+    Private Function HashPassword(password As String) As String
+        Using sha256 As SHA256 = sha256.Create()
+            Dim hashedBytes As Byte() = sha256.ComputeHash(Encoding.UTF8.GetBytes(password))
+            Dim builder As New StringBuilder()
+
+            For i As Integer = 0 To hashedBytes.Length - 1
+                builder.Append(hashedBytes(i).ToString("x2"))
+            Next
+
+            Return builder.ToString()
+        End Using
+    End Function
+
 
     Private Sub LogLoginEvent(userID As Integer, username As String)
         ' Create a timestamp for the event

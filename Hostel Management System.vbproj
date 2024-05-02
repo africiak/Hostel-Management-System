@@ -92,6 +92,18 @@
     <Compile Include="ADash.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="billingForm.Designer.vb">
+      <DependentUpon>billingForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="billingForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="complaints.Designer.vb">
+      <DependentUpon>complaints.vb</DependentUpon>
+    </Compile>
+    <Compile Include="complaints.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +127,12 @@
       <DependentUpon>FrmUdash.vb</DependentUpon>
     </Compile>
     <Compile Include="FrmUdash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="helpForm.Designer.vb">
+      <DependentUpon>helpForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="helpForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -179,6 +197,12 @@
   <ItemGroup>
     <EmbeddedResource Include="ADash.resx">
       <DependentUpon>ADash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="billingForm.resx">
+      <DependentUpon>billingForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="complaints.resx">
+      <DependentUpon>complaints.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmaudit.resx">
       <DependentUpon>frmaudit.vb</DependentUpon>
