@@ -29,6 +29,8 @@ Partial Class FrmUdash
         Me.complaints = New System.Windows.Forms.Button()
         Me.visitors = New System.Windows.Forms.Button()
         Me.centerpanel = New System.Windows.Forms.Panel()
+        Me.receipt = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnlogout = New System.Windows.Forms.Button()
@@ -37,7 +39,6 @@ Partial Class FrmUdash
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblUsername = New System.Windows.Forms.TextBox()
         Me.txtAllocatedroom = New System.Windows.Forms.TextBox()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.centerpanel.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -107,6 +108,7 @@ Partial Class FrmUdash
         '
         Me.centerpanel.AutoSize = True
         Me.centerpanel.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.centerpanel.Controls.Add(Me.receipt)
         Me.centerpanel.Controls.Add(Me.Button2)
         Me.centerpanel.Controls.Add(Me.reservation)
         Me.centerpanel.Controls.Add(Me.complaints)
@@ -116,8 +118,30 @@ Partial Class FrmUdash
         Me.centerpanel.Dock = System.Windows.Forms.DockStyle.Left
         Me.centerpanel.Location = New System.Drawing.Point(0, 95)
         Me.centerpanel.Name = "centerpanel"
-        Me.centerpanel.Size = New System.Drawing.Size(233, 676)
+        Me.centerpanel.Size = New System.Drawing.Size(232, 676)
         Me.centerpanel.TabIndex = 18
+        '
+        'receipt
+        '
+        Me.receipt.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.receipt.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.receipt.Location = New System.Drawing.Point(1, 450)
+        Me.receipt.Name = "receipt"
+        Me.receipt.Size = New System.Drawing.Size(228, 74)
+        Me.receipt.TabIndex = 8
+        Me.receipt.Text = "Receipt"
+        Me.receipt.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.Button2.Location = New System.Drawing.Point(1, 530)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(228, 74)
+        Me.Button2.TabIndex = 7
+        Me.Button2.Text = "Help"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'PictureBox1
         '
@@ -216,17 +240,6 @@ Partial Class FrmUdash
         Me.txtAllocatedroom.Size = New System.Drawing.Size(444, 41)
         Me.txtAllocatedroom.TabIndex = 22
         '
-        'Button2
-        '
-        Me.Button2.Font = New System.Drawing.Font("Poppins", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.Button2.Location = New System.Drawing.Point(2, 450)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(228, 74)
-        Me.Button2.TabIndex = 7
-        Me.Button2.Text = "Help"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
         'FrmUdash
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
@@ -266,4 +279,5 @@ Partial Class FrmUdash
     Friend WithEvents lblUsername As TextBox
     Friend WithEvents txtAllocatedroom As TextBox
     Friend WithEvents Button2 As Button
+    Friend WithEvents receipt As Button
 End Class

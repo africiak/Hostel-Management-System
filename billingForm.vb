@@ -112,11 +112,12 @@ Public Class billingForm
 
     Private Function AllocatedRooms(userID As Integer) As Boolean
         Dim conn As New MySqlConnection(My.Settings.connString)
-
+        Console.WriteLine("UserID: " & userID)
+        Dim isAllocated As Boolean
         Try
             conn.Open()
 
-            Using cmd As New MySqlCommand("SELECT COUNT(*) FROM allocations WHERE userID = @UserID", conn)
+            Using cmd As New MySqlCommand("SELECT COUNT(*) FROM allocation WHERE user_id = @UserID", conn)
                 cmd.Parameters.AddWithValue("@UserID", userID)
 
                 ' Execute the query and check if any allocation records exist for the user
@@ -129,6 +130,8 @@ Public Class billingForm
         Finally
             conn.Close()
         End Try
+
+        Return isAllocated
     End Function
 
 

@@ -101,14 +101,18 @@ Public Class Rooms
     End Sub
 
     Private Sub btndash_Click(sender As Object, e As EventArgs) Handles btndash.Click
-        Me.Hide()
+        Me.Close()
+        Dim loggedInUserID As Integer = Frmlogin.loggedInUserID
+        Dim loggedInUsername As String = Frmlogin.loggedInUsername
+
+        Dim ADash As New ADash(loggedInUserID, loggedInUsername)
         ADash.Show()
 
     End Sub
 
     Private Sub btnlogout_Click(sender As Object, e As EventArgs) Handles btnlogout.Click
-        Me.Hide()
-        splash.Show()
-
+        Dim roomsdisplay As New roomsdisplay()
+        roomsdisplay.Show()
+        Me.Close()
     End Sub
 End Class

@@ -7,7 +7,7 @@ Public Class frmaudit
     Private Sub LoadAuditTrailData()
         Try
             Dim conn As New MySqlConnection(My.Settings.connString)
-            Dim adapter As New MySqlDataAdapter("SELECT * FROM error_log", conn)
+            Dim adapter As New MySqlDataAdapter("SELECT * FROM audittrail", conn)
             Dim dt As New DataTable()
             adapter.Fill(dt)
             DataGridView1.DataSource = dt
@@ -24,7 +24,11 @@ Public Class frmaudit
     End Sub
 
     Private Sub btndash_Click(sender As Object, e As EventArgs) Handles btndash.Click
-        Me.Hide()
+        Me.Close()
+        Dim loggedInUserID As Integer = Frmlogin.loggedInUserID
+        Dim loggedInUsername As String = Frmlogin.loggedInUsername
+
+        Dim ADash As New ADash(loggedInUserID, loggedInUsername)
         ADash.Show()
 
     End Sub

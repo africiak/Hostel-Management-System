@@ -39,18 +39,26 @@ Partial Class package
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnlogout = New System.Windows.Forms.Button()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button2
         '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Button2.BackColor = System.Drawing.SystemColors.Highlight
         Me.Button2.Font = New System.Drawing.Font("Poppins", 10.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Button2.Location = New System.Drawing.Point(366, 561)
+        Me.Button2.Location = New System.Drawing.Point(359, 618)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(415, 71)
         Me.Button2.TabIndex = 25
@@ -59,10 +67,11 @@ Partial Class package
         '
         'Panel4
         '
+        Me.Panel4.BackColor = System.Drawing.Color.White
         Me.Panel4.Controls.Add(Me.Label2)
         Me.Panel4.Controls.Add(Me.Label7)
         Me.Panel4.Controls.Add(Me.desc)
-        Me.Panel4.Location = New System.Drawing.Point(274, 279)
+        Me.Panel4.Location = New System.Drawing.Point(274, 336)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(578, 95)
         Me.Panel4.TabIndex = 21
@@ -78,11 +87,11 @@ Partial Class package
         '
         'Label7
         '
-        Me.Label7.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Label7.BackColor = System.Drawing.SystemColors.Highlight
         Me.Label7.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.Label7.Location = New System.Drawing.Point(186, 69)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(376, 10)
+        Me.Label7.Size = New System.Drawing.Size(376, 5)
         Me.Label7.TabIndex = 5
         '
         'desc
@@ -98,10 +107,11 @@ Partial Class package
         '
         'Panel5
         '
+        Me.Panel5.BackColor = System.Drawing.Color.White
         Me.Panel5.Controls.Add(Me.Label9)
         Me.Panel5.Controls.Add(Me.Label8)
         Me.Panel5.Controls.Add(Me.cost)
-        Me.Panel5.Location = New System.Drawing.Point(274, 406)
+        Me.Panel5.Location = New System.Drawing.Point(274, 449)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(578, 95)
         Me.Panel5.TabIndex = 22
@@ -117,11 +127,11 @@ Partial Class package
         '
         'Label8
         '
-        Me.Label8.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Label8.BackColor = System.Drawing.SystemColors.Highlight
         Me.Label8.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.Label8.Location = New System.Drawing.Point(186, 65)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(376, 10)
+        Me.Label8.Size = New System.Drawing.Size(376, 5)
         Me.Label8.TabIndex = 5
         '
         'cost
@@ -137,10 +147,11 @@ Partial Class package
         '
         'Panel2
         '
+        Me.Panel2.BackColor = System.Drawing.Color.White
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Controls.Add(Me.packname)
-        Me.Panel2.Location = New System.Drawing.Point(274, 152)
+        Me.Panel2.Location = New System.Drawing.Point(274, 225)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(578, 95)
         Me.Panel2.TabIndex = 20
@@ -156,11 +167,11 @@ Partial Class package
         '
         'Label5
         '
-        Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Label5.BackColor = System.Drawing.SystemColors.Highlight
         Me.Label5.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.Label5.Location = New System.Drawing.Point(186, 72)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(376, 10)
+        Me.Label5.Size = New System.Drawing.Size(376, 5)
         Me.Label5.TabIndex = 5
         '
         'packname
@@ -176,8 +187,9 @@ Partial Class package
         '
         'PictureBox1
         '
+        Me.PictureBox1.BackColor = System.Drawing.Color.White
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(457, 80)
+        Me.PictureBox1.Location = New System.Drawing.Point(456, 163)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(46, 32)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -186,9 +198,9 @@ Partial Class package
         '
         'Label3
         '
-        Me.Label3.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Label3.BackColor = System.Drawing.SystemColors.Highlight
         Me.Label3.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Label3.Location = New System.Drawing.Point(520, 105)
+        Me.Label3.Location = New System.Drawing.Point(519, 188)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(40, 7)
         Me.Label3.TabIndex = 27
@@ -196,22 +208,92 @@ Partial Class package
         'Label4
         '
         Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.White
         Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Label4.Font = New System.Drawing.Font("Poppins Medium", 13.875!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
         Me.Label4.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Label4.Location = New System.Drawing.Point(509, 58)
+        Me.Label4.Location = New System.Drawing.Point(508, 141)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(197, 65)
+        Me.Label4.Size = New System.Drawing.Size(164, 56)
         Me.Label4.TabIndex = 26
         Me.Label4.Text = "Package"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.Highlight
+        Me.Panel1.Controls.Add(Me.btnlogout)
+        Me.Panel1.Controls.Add(Me.PictureBox2)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.Label10)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1156, 95)
+        Me.Panel1.TabIndex = 29
+        '
+        'btnlogout
+        '
+        Me.btnlogout.BackColor = System.Drawing.SystemColors.Highlight
+        Me.btnlogout.Dock = System.Windows.Forms.DockStyle.Right
+        Me.btnlogout.Font = New System.Drawing.Font("Poppins", 10.125!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnlogout.ForeColor = System.Drawing.Color.White
+        Me.btnlogout.Location = New System.Drawing.Point(948, 0)
+        Me.btnlogout.Name = "btnlogout"
+        Me.btnlogout.Size = New System.Drawing.Size(208, 95)
+        Me.btnlogout.TabIndex = 13
+        Me.btnlogout.Text = "Rooms"
+        Me.btnlogout.UseVisualStyleBackColor = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(44, 26)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(46, 32)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 12
+        Me.PictureBox2.TabStop = False
+        '
+        'Label6
+        '
+        Me.Label6.BackColor = System.Drawing.Color.White
+        Me.Label6.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Label6.Location = New System.Drawing.Point(107, 53)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(40, 7)
+        Me.Label6.TabIndex = 9
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Label10.Font = New System.Drawing.Font("Poppins", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Label10.Location = New System.Drawing.Point(96, 9)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(194, 56)
+        Me.Label10.TabIndex = 8
+        Me.Label10.Text = "DormDash"
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Panel3
+        '
+        Me.Panel3.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.Location = New System.Drawing.Point(169, 119)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(840, 614)
+        Me.Panel3.TabIndex = 30
         '
         'package
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1156, 771)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label4)
@@ -219,6 +301,7 @@ Partial Class package
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Panel3)
         Me.Name = "package"
         Me.Text = "package"
         Me.Panel4.ResumeLayout(False)
@@ -228,6 +311,9 @@ Partial Class package
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -249,4 +335,10 @@ Partial Class package
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents btnlogout As Button
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Panel3 As Panel
 End Class

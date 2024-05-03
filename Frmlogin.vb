@@ -61,9 +61,10 @@ Public Class Frmlogin
 
                         If Email.ToLower().Contains("admin@gmail.com") Then
 
-                            Me.Hide()
-                            ADash.Show()
-                        Else
+                                Me.Close()
+                                Dim ADash As New ADash(loggedInUserID, loggedInUsername)
+                                ADash.Show()
+                            Else
                             'check profile
                             Dim profileExists As Boolean = CheckProfile(loggedInUserID)
 

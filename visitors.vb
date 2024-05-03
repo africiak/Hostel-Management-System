@@ -96,4 +96,6 @@ Public Class visitors
         Frmlogin.txtpass.Clear()
 
     End Sub
+
+
 End Class

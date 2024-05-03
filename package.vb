@@ -62,4 +62,9 @@ Public Class package
 
 
     End Sub
+
+    Private Sub btnlogout_Click(sender As Object, e As EventArgs) Handles btnlogout.Click
+        Me.Hide()
+        Rooms.Show()
+    End Sub
 End Class

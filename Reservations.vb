@@ -43,7 +43,7 @@ Public Class Reservations
     End Sub
 
     Private Sub txtpack_SelectedIndexChanged(sender As Object, e As EventArgs)
-        ' Update the price whenever the selected package changes
+
         UpdatePrice()
     End Sub
 
@@ -58,7 +58,7 @@ Public Class Reservations
         ElseIf selectedPackageId = 3 Then
             txtprice.Text = "30000"
         Else
-            txtprice.Text = "" ' Set default value if package ID is not recognized
+            txtprice.Text = ""
         End If
     End Sub
     Private Sub reserve_Click(sender As Object, e As EventArgs) Handles reserve.Click

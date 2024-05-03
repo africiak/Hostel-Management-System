@@ -2,6 +2,8 @@
 Imports Bunifu.UI.WinForms.BunifuSnackbar
 Imports System.Threading
 Imports MySql.Data.MySqlClient
+Imports System.IO
+Imports System.Linq.Expressions
 
 Public Class FrmUdash
 
@@ -41,48 +43,48 @@ Public Class FrmUdash
     Private Function GetAllocatedRoomInfo(userID As Integer) As String
         Dim allocatedRoomInfo As String = ""
 
-        ' Database connection string
+
         Dim connectionString As String = My.Settings.connString
 
-        ' Query to retrieve allocated room information based on the user's ID
+
         Dim query As String = "SELECT room_no, room_type FROM allocation WHERE user_id = @userID"
 
-        ' Create a MySqlConnection object
+
         Using conn As New MySqlConnection(connectionString)
-            ' Create a MySqlCommand object with the query and connection
+
             Using cmd As New MySqlCommand(query, conn)
-                ' Add the parameter for user ID
+
                 cmd.Parameters.AddWithValue("@userID", userID)
 
                 Try
-                    ' Open the connection
+
                     conn.Open()
 
-                    ' Execute the query and retrieve data using a MySqlDataReader
+
                     Dim reader As MySqlDataReader = cmd.ExecuteReader()
 
-                    ' Check if there are rows returned
+
                     If reader.HasRows Then
-                        ' Loop through the rows
+
                         While reader.Read()
-                            ' Construct the allocated room information string
+
                             allocatedRoomInfo &= "Room Number: " & reader("room_no").ToString() & ", Room Type: " & reader("room_type").ToString() & vbCrLf
                         End While
                     Else
-                        ' If no rows are returned, set allocated room info to indicate no allocation
+
                         allocatedRoomInfo = "No room allocated."
                     End If
 
-                    ' Close the reader
+
                     reader.Close()
                 Catch ex As Exception
-                    ' Handle any exceptions
+
                     MessageBox.Show("An error occurred while retrieving allocated room information: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End Try
             End Using
         End Using
 
-        ' Return the allocated room information
+
         Return allocatedRoomInfo
     End Function
 
@@ -135,14 +137,13 @@ Public Class FrmUdash
 
                 Dim result As Object = cmd.ExecuteScalar()
 
-                ' Check if a valid result is returned
                 If result IsNot Nothing AndAlso Not DBNull.Value.Equals(result) Then
-                    ' Parse the result to Decimal and assign it to the price variable
+
                     price = Convert.ToDecimal(result)
                 End If
             End Using
         Catch ex As Exception
-            ' Handle any exceptions
+
             MessageBox.Show("An error occurred while retrieving price from reservations table: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
             conn.Close()
@@ -154,7 +155,7 @@ Public Class FrmUdash
 
     Private Sub billing_Click(sender As Object, e As EventArgs) Handles billing.Click
         Dim price As Decimal = GetPriceReservations(loggedInUserID)
-        Dim billingForm As New BillingForm(price, loggedInUserID, loggedInUsername)
+        Dim billingForm As New billingForm(price, loggedInUserID, loggedInUsername)
         billingForm.Show()
     End Sub
 
@@ -162,4 +163,53 @@ Public Class FrmUdash
         Dim helpForm As New helpForm()
         helpForm.Show()
     End Sub
+
+    Private Sub receipt_Click(sender As Object, e As EventArgs) Handles receipt.Click
+        Dim receiptFilePath As String = "receipt.txt"
+        If File.Exists(receiptFilePath) Then
+            Dim receiptContent As String = File.ReadAllText(receiptFilePath)
+
+            If Not String.IsNullOrEmpty(receiptContent) Then
+                MessageBox.Show(receiptContent, "Receipt", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                LogAuditTrail(userID)
+            Else
+
+                MessageBox.Show("Receipts will display after payment is processed.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        Else
+
+            MessageBox.Show("No receipt found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+
+    End Sub
+
+    Private Sub LogAuditTrail(userID As Integer)
+        Try
+            Using conn As New MySqlConnection(My.Settings.connString)
+
+                conn.Open()
+
+
+                Dim sql As String = "INSERT INTO audittrail (timestamp, userid, eventType, Description) VALUES (@Timestamp, @UserID, @EventType, @Description)"
+                Using cmd As New MySqlCommand(sql, conn)
+
+                    cmd.Parameters.AddWithValue("@Timestamp", DateTime.Now)
+                    cmd.Parameters.AddWithValue("@UserID", userID)
+                    cmd.Parameters.AddWithValue("@EventType", "ViewReceipt")
+                    cmd.Parameters.AddWithValue("@Description", "User '" & userID & "' viewed receipt.")
+
+                    Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+                    If rowsAffected > 0 Then
+
+                    Else
+                        MessageBox.Show("Failed to log audit trail.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                End Using
+            End Using
+        Catch ex As Exception
+            MsgBox("An error occurred while logging the login event: " & ex.Message, MsgBoxStyle.Exclamation)
+            Console.WriteLine("Error logging login event: " & ex.ToString())
+        End Try
+    End Sub
+
 End Class

@@ -282,6 +282,7 @@ Partial Class Rooms
         '
         'Panel3
         '
+        Me.Panel3.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Panel3.BackColor = System.Drawing.Color.White
         Me.Panel3.Controls.Add(Me.Label3)
         Me.Panel3.Controls.Add(Me.Button1)
@@ -334,7 +335,7 @@ Partial Class Rooms
         Me.btnlogout.Name = "btnlogout"
         Me.btnlogout.Size = New System.Drawing.Size(208, 95)
         Me.btnlogout.TabIndex = 13
-        Me.btnlogout.Text = "Logout"
+        Me.btnlogout.Text = "Display"
         Me.btnlogout.UseVisualStyleBackColor = False
         '
         'PictureBox2
