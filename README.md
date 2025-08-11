@@ -23,3 +23,10 @@ A VB.NET desktop application built with Visual Studio for managing hostel operat
 
 ---
 
+## Screenshots
+
+<img width="2558" height="1226" alt="userdashboard" src="https://github.com/user-attachments/assets/6df9a8d2-6abd-439b-bece-7822dcf1a509" />
+
+<img width="2559" height="1299" alt="Screenshot 2024-05-03 132701" src="https://github.com/user-attachments/assets/92957a9c-2ed7-4024-a309-6f33b881d48b" />
+
+
